@@ -1358,12 +1358,12 @@ class Player : public Unit
         bool CanSeeStartQuest(Quest const* pQuest) const;
         bool CanTakeQuest(Quest const* pQuest, bool msg) const;
         bool CanAddQuest(Quest const* pQuest, bool msg) const;
-        bool CanCompleteQuest(uint32 quest_id, QuestStatus status = QUEST_STATUS_FORCE_COMPLETE) const;
+        bool CanCompleteQuest(uint32 quest_id) const;
         bool CanCompleteRepeatableQuest(Quest const* pQuest) const;
         bool CanRewardQuest(Quest const* pQuest, bool msg) const;
         bool CanRewardQuest(Quest const* pQuest, uint32 reward, bool msg) const;
         void AddQuest(Quest const* pQuest, Object* questGiver);
-        void CompleteQuest(uint32 quest_id);
+		void CompleteQuest(uint32 quest_id, QuestStatus status = QUEST_STATUS_COMPLETE);
         void IncompleteQuest(uint32 quest_id);
         void RewardQuest(Quest const* pQuest, uint32 reward, Object* questGiver, bool announce = true);
 
